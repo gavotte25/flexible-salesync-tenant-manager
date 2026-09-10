@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: tenant-manager
+  datasource:
+    url: jdbc:postgresql://${DB_HOST}:${DB_PORT}/${DB_NAME}
+    username: ${DB_USER}
+    password: ${DB_PASSWORD}
+  jpa:
+    hibernate:
+      # Greenfield service with no legacy SQL init scripts (unlike the other services,
+      # which mount hand-written schema SQL from common.tar) - let Hibernate manage it.
+      ddl-auto: update
+  rabbitmq:
+    host: ${RABBITMQ_HOST}
+    port: ${RABBITMQ_PORT}
+    username: ${RABBITMQ_USER}
+    password: ${RABBITMQ_PASSWORD}
+
+springdoc:
+  api-docs:
+    path: /api-docs
+
+server:
+  port: 5100

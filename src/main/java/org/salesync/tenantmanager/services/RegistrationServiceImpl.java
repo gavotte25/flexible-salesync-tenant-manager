@@ -31,6 +31,7 @@ public class RegistrationServiceImpl implements RegistrationService {
         registration.setTargetServiceDns(request.getTargetServiceDns());
         registration.setTargetPort(request.getTargetPort());
         registration.setVersion(request.getVersion());
+        registration.setConfig(request.getConfig());
         registration.setActive(true);
         registration.setUpdatedAt(Instant.now());
         return toDto(registrationRepository.save(registration));
@@ -76,6 +77,7 @@ public class RegistrationServiceImpl implements RegistrationService {
                 registration.getTargetServiceDns(),
                 registration.getTargetPort(),
                 registration.getVersion(),
+                registration.getConfig(),
                 registration.isActive(),
                 registration.getUpdatedAt());
     }

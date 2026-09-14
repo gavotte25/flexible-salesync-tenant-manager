@@ -40,6 +40,14 @@ public class CustomizationRegistration {
     @Column(name = "version", nullable = false)
     private String version;
 
+    /**
+     * Opaque, per-tenant JSON blob (webhook URLs, template maps, etc.) that rides along
+     * with the activation instead of needing a bespoke config subsystem per customization.
+     * Tenant Manager never parses it - only the target customization microservice does.
+     */
+    @Column(name = "config", columnDefinition = "TEXT")
+    private String config;
+
     @Column(name = "active", nullable = false)
     private boolean active = true;
 

@@ -69,6 +69,7 @@ public class OfferingServiceImpl implements OfferingService {
             registrationRequest.setTargetServiceDns(offering.getTargetServiceDns());
             registrationRequest.setTargetPort(offering.getTargetPort());
             registrationRequest.setVersion(offering.getVersion());
+            registrationRequest.setConfig(request.getConfig());
             registrationService.register(registrationRequest);
         }
     }

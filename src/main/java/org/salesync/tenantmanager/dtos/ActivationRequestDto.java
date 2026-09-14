@@ -12,4 +12,7 @@ public class ActivationRequestDto {
 
     @NotBlank
     private String offeringKey;
+
+    /** Opaque per-tenant config (JSON string) for offerings that need one, e.g. a Slack webhook URL. */
+    private String config;
 }

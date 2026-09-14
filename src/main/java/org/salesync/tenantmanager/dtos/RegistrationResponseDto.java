@@ -17,6 +17,7 @@ public class RegistrationResponseDto {
     private String targetServiceDns;
     private int targetPort;
     private String version;
+    private String config;
     private boolean active;
     private Instant updatedAt;
 }

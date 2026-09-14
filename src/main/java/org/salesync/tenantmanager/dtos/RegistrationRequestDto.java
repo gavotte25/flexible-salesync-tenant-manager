@@ -24,4 +24,7 @@ public class RegistrationRequestDto {
 
     @NotBlank
     private String version;
+
+    /** Opaque per-tenant config (JSON string), forwarded as-is to the target customization. */
+    private String config;
 }
